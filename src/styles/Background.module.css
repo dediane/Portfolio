@@ -1,0 +1,4 @@
+.gradient {
+    height: 50vh;
+    background: linear-gradient(90deg, #f12711 0%, #f5af19 100%);
+}

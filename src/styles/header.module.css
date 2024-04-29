@@ -1,0 +1,27 @@
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-family: 'TommySoft';
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 98px;
+}
+
+.title2 {
+    font-size: 48px;
+}   
+
+.title3 {
+    font-size: 94px;
+}   
+
+.title4 {
+    font-size: 90px;
+}   
+

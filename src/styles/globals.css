@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'TommySoft';
+	src: url('/fonts/made-tommy-soft-medium.eot') format('embedded-opentype'),
+       url('/fonts/made-tommy-soft-medium.woff2') format('woff2'),
+	     url('/fonts/made-tommy-soft-medium.woff') format('woff'),
+	     url('/fonts/made-tommy-soft-medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Base styles */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+    background-color: var(--background-color);
+    background-image: radial-gradient(#ddc0bd 0.8px, rgba(255, 255, 255, 0) 0.8px);
+    background-size: 18px 18px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Light mode colors */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --text-contrast: #ffffff;
+    --link-color: #0070f3;
+    --color1: #8f5dec;
+    --color1-light: #dfcefe;    
+    --color2: #ff77a7;
+    --color2-light: #ffe8f6;    
+    --color3: #17b6ff;
+    --color3-light: #d7edff;
+    --header-bg-color: #f0f0f0;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #dddddd;
+        --link-color: #0096ff;
+        --header-bg-color: #1e1e1e;
+    }
+}
+
+/* Applying color variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg-color);
+}
+
+a:hover {
+    color: var(--link-color);
+}
