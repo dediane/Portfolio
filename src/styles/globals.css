@@ -13,7 +13,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family:'TommySoft', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     transition: color 0.2s ease-out, background-color 0.2s ease-out;
     background-color: var(--background-color);
@@ -40,11 +40,15 @@ a {
     --text-contrast: #ffffff;
     --link-color: #0070f3;
     --color1: #8f5dec;
-    --color1-light: #dfcefe;    
+    --color1-light: #e7daff;    
     --color2: #ff77a7;
     --color2-light: #ffe8f6;    
     --color3: #17b6ff;
     --color3-light: #d7edff;
+    --color4: #FFDA36;
+    --color4-light: #fffcf0;
+    --color5: #41FF92;
+    --color5-light: #e3ffef;
     --header-bg-color: #f0f0f0;
 }
 

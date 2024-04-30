@@ -1,0 +1,109 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color3-light);
+    border: 2.5px solid var(--color3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.front h1 {
+    font-size: 2rem;
+    color: var(--color3);
+    margin: 1rem;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color1-light);
+    border: 2.5px solid var(--color1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.back h1 {
+    font-size: 2rem;
+    color: var(--color1);
+    margin: 1rem;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color2-light);
+    border: 2.5px solid var(--color2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.tools h1 {
+    font-size: 2rem;
+    color: var(--color2);
+    margin: 1rem;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color5-light);
+    border: 2.5px solid var(--color5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.skills h1 {
+    font-size: 2rem;
+    color: var(--color5);
+    margin: 1rem;
+}
+
+.logos {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.logos img {
+    margin: 1rem;
+}
+
+.titles {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titles p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0.5rem;
+}
