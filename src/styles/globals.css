@@ -41,12 +41,16 @@ a {
     --link-color: #0070f3;
     --color1: #8f5dec;
     --color1-light: #e7daff;    
+    --color1-ultralight: #f6f1ff;    
     --color2: #ff77a7;
     --color2-light: #ffe8f6;    
+    --color2-ultralight: #ffedf8;    
     --color3: #17b6ff;
-    --color3-light: #d7edff;
+    --color3-light: #edf7ff;
+    --color3-ultralight: #d7edff;
     --color4: #FFDA36;
-    --color4-light: #fffcf0;
+    --color4-light: #fff9e3;
+    --color4-ultralight: #fffdf7;
     --color5: #41FF92;
     --color5-light: #e3ffef;
     --header-bg-color: #f0f0f0;

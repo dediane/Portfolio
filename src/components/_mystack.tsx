@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/styles/mystack.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 //front
 import css from "/public/logos/css3-original.svg";
@@ -41,62 +42,108 @@ import illustrator from "/public/logos/illustrator-plain.svg";
 
 export const MyStack = () => {
     return (
-    <>
-        <h1>My Stack</h1>
-        <div className={styles.container}>
-            <FrontStack/>
-            <BackStack/>
-            <Tools/>
-            <Skills/>
-        </div>
-    </>
+        <>
+            <h1>My favourites technologies are...</h1>
+            <div className={styles.container}>
+                <FrontStack />
+                <BackStack />
+                <Tools />
+                <Skills />
+            </div>
+        </>
     );
 }
 
-export const FrontStack = () => {
+const FrontStack = () => {
+    // States for technology name and description
+    const [techName, setTechName] = useState('');
+    const [techDescription, setTechDescription] = useState('');
+
+    // Data array with tech info
+    const technologies = [
+        { src: html, alt: "HTML Logo", description: "HyperText Markup Language, the backbone of web content structure.", name: "HTML" },
+        { src: css, alt: "CSS Logo", description: "Cascading Style Sheets, for styling web pages.", name: "CSS" },
+        { src: javascript, alt: "JavaScript Logo", description: "High-level, often just-in-time compiled language that conforms to the ECMAScript specification.", name: "JavaScript" },
+        { src: typescript, alt: "TypeScript Logo", description: "A strict syntactical superset of JavaScript, adds static types.", name: "TypeScript" },
+        { src: react, alt: "React Logo", description: "A JavaScript library for building user interfaces.", name: "React" },
+        { src: nextjs, alt: "Next.js Logo", description: "A React framework for production.", name: "Next.js" },
+        { src: tailwind, alt: "Tailwind CSS Logo", description: "A utility-first CSS framework for rapidly building custom designs.", name: "Tailwind CSS" },
+        { src: bootstrap, alt: "Bootstrap Logo", description: "A free and open-source CSS framework directed at responsive, mobile-first front-end web development.", name: "Bootstrap" }
+    ];
+
     return (
         <div className={styles.front}>
             <h1>Front-End</h1>
             <div className={styles.logos}>
-            <Image priority src={html} alt="HTML Logo" width={50} height={50} />
-            <Image priority src={css} alt="CSS Logo" width={50} height={50} />
-            <Image priority src={javascript} alt="JavaScript Logo" width={50} height={50} />
-            <Image priority src={typescript} alt="TypeScript Logo" width={50} height={50} />
-            <Image priority src={react} alt="React Logo" width={50} height={50} />
-            <Image priority src={nextjs} alt="Next.js Logo" width={50} height={50} />
-            <Image priority src={tailwind} alt="Tailwind CSS Logo" width={50} height={50} />
-            <Image priority src={bootstrap} alt="Bootstrap Logo" width={50} height={50} />
-            <div className={styles.titles}>
-                <p> HTML - CSS - JavaScript - Typescript - React - Next.js</p>
-                <p> Tailwind CSS - Bootstrap </p>
+                {technologies.map((tech) => (
+                    <Image
+                        priority
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={50}
+                        height={50}
+                        onMouseEnter={() => {
+                            setTechName(tech.name);
+                            setTechDescription(tech.description);
+                        }}
+                        onMouseLeave={() => {
+                            setTechName('');
+                            setTechDescription('');
+                        }}
+                    />
+                ))}
             </div>
+            <div className={styles.titles}>
+                {techName ? <div><p className={styles.technoName}>{techName}</p><p className={styles.technoDescription}>{techDescription}</p></div> : <p className={styles.placeholder}></p>}
             </div>
         </div>
     );
 }
 
-export const BackStack = () => {
+const BackStack = () => {
+    // States for technology name and description
+    const [techName, setTechName] = useState('');
+    const [techDescription, setTechDescription] = useState('');
+
+    // Data array with tech info
+    const technologies = [
+        { src: c, alt: "C Logo", description: "General-purpose programming language.", name: "C" },
+        { src: cpluscplus, alt: "C++ Logo", description: "A language with object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation.", name: "C++" },
+        { src: nodejs, alt: "Node.js Logo", description: "JavaScript runtime built on Chrome's V8 JavaScript engine.", name: "Node.js" },
+        { src: express, alt: "Express Logo", description: "Fast, unopinionated, minimalist web framework for Node.js.", name: "Express" },
+        { src: nestjs, alt: "Nest.js Logo", description: "A progressive Node.js framework for building efficient, reliable and scalable server-side applications.", name: "Nest.js" },
+        { src: python, alt: "Python Logo", description: "An interpreted, high-level and general-purpose programming language.", name: "Python" },
+        { src: mongodb, alt: "MongoDB Logo", description: "NoSQL database that uses a document-oriented data model.", name: "MongoDB" },
+        { src: postgres, alt: "Postgres Logo", description: "Powerful, open source object-relational database system.", name: "PostgreSQL" },
+        { src: prisma, alt: "Prisma Logo", description: "Next-generation ORM for Node.js and TypeScript.", name: "Prisma" },
+        { src: docker, alt: "Docker Logo", description: "A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.", name: "Docker" }
+    ];
+
     return (
         <div className={styles.back}>
             <h1>Back-End</h1>
             <div className={styles.logos}>
-            <Image priority src={c} alt="C Logo" width={50} height={50} />
-            <Image priority src={cpluscplus} alt="C++ Logo" width={50} height={50} />
-            <Image priority src={nodejs} alt="Node.js Logo" width={50} height={50} />
-            <Image priority src={express} alt="Express Logo" width={50} height={50} />
-            <Image priority src={nestjs} alt="Nest.js Logo" width={50} height={50} />
-            <Image priority src={python} alt="Python Logo" width={50} height={50} />
-            <Image priority src={mongodb} alt="MongoDB Logo" width={50} height={50} />
-            <Image priority src={postgres} alt="Postgres Logo" width={50} height={50} />
-            {/* <Image priority src={firebase} alt="Firebase Logo" width={50} height={50} /> */}
-            <Image priority src={prisma} alt="Prisma Logo" width={50} height={50} />
-            <Image priority src={docker} alt="Docker Logo" width={50} height={50} />
+                {technologies.map((tech) => (
+                    <Image
+                        priority
+                        src={tech.src}
+                        alt={tech.alt}
+                        width={50}
+                        height={50}
+                        onMouseEnter={() => {
+                            setTechName(tech.name);
+                            setTechDescription(tech.description);
+                        }}
+                        onMouseLeave={() => {
+                            setTechName('');
+                            setTechDescription('');
+                        }}
+                    />
+                ))}
             </div>
             <div className={styles.titles}>
-                <p> C - C++ - Node.js - Express - Nest.js - Python</p>
-                <p> MongoDB - Postgres - Prisma - Docker</p>
+                {techName ? <div><p className={styles.technoName}>{techName}</p><p className={styles.technoDescription}>{techDescription}</p></div> : <p className={styles.placeholder}></p>}
             </div>
-            {/* <p>C, C++, Node.js, Express, Nestjs, MongoDB, Postgres, Firebase, REST API, Prisma, Docker, Ngnix</p> */}
         </div>
     );
 }
@@ -106,14 +153,14 @@ export const Tools = () => {
         <div className={styles.tools}>
             <h1>Tools</h1>
             <div className={styles.logos}>
-            <Image priority src={git} alt="Git Logo" width={50} height={50} />
-            <Image priority src={github} alt="GitHub Logo" width={50} height={50} />
-            <Image priority src={trello} alt="Trello Logo" width={50} height={50} />
-            <Image priority src={notion} alt="Notion Logo" width={50} height={50} />
-            <div className={styles.titles}>
-                <p>Git - GitHub - Trello - Notion</p>
-            </div>
-            {/* <p>Git, GitHub, trello, notion, Heroku, Figma, Sketch, Photoshop, Illustrator</p> */}
+                <Image priority src={git} alt="Git Logo" width={50} height={50} />
+                <Image priority src={github} alt="GitHub Logo" width={50} height={50} />
+                <Image priority src={trello} alt="Trello Logo" width={50} height={50} />
+                <Image priority src={notion} alt="Notion Logo" width={50} height={50} />
+                <div className={styles.titles}>
+                    <p>Git - GitHub - Trello - Notion</p>
+                </div>
+                {/* <p>Git, GitHub, trello, notion, Heroku, Figma, Sketch, Photoshop, Illustrator</p> */}
             </div>
         </div>
     );

@@ -1,0 +1,140 @@
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;   
+}
+
+.header h1 {
+    font-family: 'TommySoft';
+    margin: 0;
+    padding: 0;
+}
+
+.leftsection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 98px;
+}
+
+.title2 {
+    font-size: 48px;
+}   
+
+.title3 {
+    font-size: 94px;
+}   
+
+.title4 {
+    font-size: 90px;
+}   
+
+.title span {
+    color: var(--text-color);
+    transition: transform 0.5s ease, color 0.5s ease; /* Smooth transitions for transform and color */
+}
+
+/* Keyframes for the scaling and color effect */
+@keyframes magnify {
+    0%, 100% { 
+        transform: scaleX(1);
+    }
+    50% { 
+        transform: scaleX(1.5); /* Slightly magnify */
+    }
+}
+
+.title:hover span {
+    animation: magnify 3.6s infinite; /* Constant animation */
+}
+
+.rightsection img {
+    transition: transform 1s ease-in-out; /* Smooth transition for transform */
+    transform: scale(0.9);
+}
+
+.rightsection img:hover {
+    transform: scale(1); /* Slightly magnify */
+}
+
+
+.leftsection button {
+    /* background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color); */
+    padding: 20px 20px;
+    border-radius: 54px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.button1 {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.button1:hover {
+    background-color: var(--color3-light);
+    color: var(--color3);
+    border: 1px solid var(--color3);
+}
+
+.button2 {
+    border: 2px solid var(--color1);
+    color: var(--color1);
+    background-color: var(--color1-light);
+    transition: all 0.8s ease;
+}
+
+// .button2:hover {
+//     border: 2px solid var(--color1);
+//     color: var(--color1-light);
+//     background-color: var(--color1);
+// }
+
+.button2:hover {
+  color: var(--color1);
+  
+  --border-angle: 0turn; // For animation.
+  --main-bg: conic-gradient(
+      from var(--border-angle),
+      var(--color1-light),
+      var(--color1-light) 5%,
+      var(--color1-light)60%,
+      var(--color1-light) 95%
+    );
+  
+  border: solid 2px transparent;
+  border-radius: 42px;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, var(--color1-light), var(--color1) 99%, transparent);
+  
+  background: 
+    // padding-box clip this background in to the overall element except the border.
+    var(--main-bg) padding-box,
+    // border-box extends this background to the border space
+    var(--gradient-border) border-box, 
+    // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
