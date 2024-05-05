@@ -3,28 +3,28 @@ import styles from "@/styles/aboutme.module.css";
 
 export const AboutMe = () => {
     return (
-        <div className={styles.container}>
-            <h1>About me</h1>
+        <div className={styles.container} id="about">
+            <h1>A LITTLE BIT ABOUT ME</h1>
             <div className={styles.wrapper}>
             <div className={styles.section}>
             <p>
-                <b className={styles.subs}>Hi, I’m Diane,</b><br/><br/> A full-stack developer in Paris. 🥖<br /> I started my career as a fashion designer and then fell in love with coding. Now, I combine my design sensibilities with my tech skills to build beautiful, effective web and mobile applications.
+                <b className={styles.subs}>Hi, I’m Diane,</b><br/><br/> A <b>full-stack developer</b> in Paris. 🥖<br /> I started my career as a <b>fashion designer</b> and then fell in love with <b>coding</b>. Now, I combine my design sensibilities with my tech skills to <b>build beautiful</b>, effective <b>web and mobile applications</b>.
                 </p>
 
             </div>
             <div className={styles.section1}>
             <p>
-                <b className={styles.subs1}>Background</b><br/><br/> I graduated from 42 school in Paris with a degree in Computer Science and I also hold a master's in Design. I’ve worked on a variety of projects, including creating a startup called "Evenly" that helps people organize their events more efficiently.
+                <b className={styles.subs1}>Background</b><br/><br/> I graduated from <b>42 school</b> in Paris with a degree in <b>Computer Science</b> and I also hold a <b>master's in Design</b>.<br/> I’ve worked on a variety of projects, including creating a startup called "Evenly" that helps people organize their events more efficiently.
                 </p>
                 </div>
                 <div className={styles.section2}>
             <p>
-                <b className={styles.subs2}>Skills and Technologies</b><br/><br/> I'm experienced with technologies like React, Node.js, NextJS and more. I focus on creating applications that are not just functional but also great to look at and easy to use.
+                <b className={styles.subs2}>Skills and Technologies</b><br/><br/> I'm experienced with technologies like <b>React, Node.js, NextJS</b> and more. I focus on <b>creating applications</b> that are not just functional but also great to look at and easy to use.
                 </p>
                 </div>
 
             <div className={styles.section3}>
-            <p><b className={styles.subs3}>Working With Me</b><br/> <br/>I like keeping things simple and transparent with my clients. I’ll work with you to understand what you need, and I'll keep you updated as I bring our shared vision to life.
+            <p><b className={styles.subs3}>Working With Me</b><br/> <br/>I like keeping things <b>simple and transparent</b> with my clients. I’ll work with you to understand what you need, and I'll keep you updated as I bring our shared <b>vision to life</b>.
             </p>
             </div>
             </div>

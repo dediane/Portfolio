@@ -2,12 +2,21 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    display: flex;   
+    display: flex;  
+    z-index: 1; 
 }
 
 .header h1 {
     font-family: 'TommySoft';
     margin: 0;
+    padding: 0;
+}
+
+.header h2 {
+    font-family: 'Raleway';
+    font-size: 21px;
+    font-weight: 500;
+    margin: 20px 0 0 0 ;
     padding: 0;
 }
 
@@ -27,11 +36,11 @@
 }   
 
 .title3 {
-    font-size: 94px;
+    font-size: 98px;
 }   
 
 .title4 {
-    font-size: 90px;
+    font-size: 98px;
 }   
 
 .title span {
@@ -137,4 +146,34 @@
   syntax: "<angle>";
   inherits: true;
   initial-value: 0turn;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100vw;
+    }
+
+    .title {
+        font-size: 74px;
+    }
+
+    .title2 {
+        font-size: 32px;
+    }
+
+    .title3 {
+        font-size: 68px;
+    }
+
+    .title4 {
+        font-size: 66px;
+    }
+
+
+    .leftsection {
+        text-align: center;
+    }
+    
 }

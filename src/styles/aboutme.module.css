@@ -15,43 +15,43 @@
 }
 
 .container h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 98px;
 }
 
 .container p {
     font-size: 1rem;
     margin-bottom: 1rem;
-    font-family: 'arial';
+    font-family: 'Raleway';
     padding: 10px;
+    
 }
 
 .subs {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
-    font-family: 'arial';
+    font-family: 'TommySoft';
     color: var(--color1);
 }
 
 .subs1 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-family: 'arial';
+    font-family: 'TommySoft';
     color: var(--color2)
 }
 
 .subs2 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-family: 'arial';
+    font-family: 'TommySoft';
     color: var(--color3)
 }
 
 .subs3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    font-family: 'arial';
-    color: var(--color4)
+    font-family: 'TommySoft';
+    color: var(--color5)
 }
 
 .section{
@@ -76,8 +76,47 @@
 }
 
 .section3{
-    background-color: var(--color4-light);
+    background-color: var(--color5-light);
     transform: scale(1.05);
     border-radius: 10px;
     margin-left: 12px;
+}
+
+.section:hover{
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
+.section1:hover{
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
+.section2:hover{
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
+.section3:hover{
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .section, .section2, .section1, .section3 {
+        margin: 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .section:hover, .section2:hover, .section1:hover, .section3:hover {
+        transform: scale(1);
+    }
 }

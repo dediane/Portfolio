@@ -8,6 +8,27 @@
 	font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway/Raleway-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway/Raleway-Light.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
 /* Base styles */
 html,
 body {
@@ -19,7 +40,9 @@ body {
     background-color: var(--background-color);
     background-image: radial-gradient(#ddc0bd 0.8px, rgba(255, 255, 255, 0) 0.8px);
     background-size: 18px 18px;
+    scroll-behavior: smooth;
 }
+
 
 a {
     color: inherit;
@@ -35,12 +58,12 @@ a {
 
 /* Light mode colors */
 :root {
-    --background-color: #ffffff;
+    /* --background-color: #ffffff;
     --text-color: #333333;
     --text-contrast: #ffffff;
     --link-color: #0070f3;
-    --color1: #8f5dec;
-    --color1-light: #e7daff;    
+    --color1: #7125ff;
+    --color1-light: #d0b6ff;    
     --color1-ultralight: #f6f1ff;    
     --color2: #ff77a7;
     --color2-light: #ffe8f6;    
@@ -53,18 +76,37 @@ a {
     --color4-ultralight: #fffdf7;
     --color5: #41FF92;
     --color5-light: #e3ffef;
+    --header-bg-color: #f0f0f0; */
+    --background-color: #fffefe;
+    --text-color: #333333;
+    --text-contrast: #ffffff;
+    --link-color: #0070f3;
+    --color1: #7125ff;
+    --color1-light: #e7daff;    
+    --color1-ultralight: #f6f1ff;    
+    --color2: #ff4e8c;
+    --color2-light: #ffe8f6;    
+    --color2-ultralight: #ffedf8;    
+    --color3: #00aeff;
+    --color3-light: #edf7ff;
+    --color3-ultralight: #d7edff;
+    --color4: #FFDA36;
+    --color4-light: #fff9e3;
+    --color4-ultralight: #fffdf7;
+    --color5: #32e27e;
+    --color5-light: #e3ffef;
     --header-bg-color: #f0f0f0;
 }
 
 /* Dark mode colors */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #121212;
         --text-color: #dddddd;
         --link-color: #0096ff;
         --header-bg-color: #1e1e1e;
     }
-}
+} */
 
 /* Applying color variables */
 body {
