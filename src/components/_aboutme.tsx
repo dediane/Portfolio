@@ -1,12 +1,28 @@
-
-
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import styles from "@/styles/aboutme.module.css";
 
-export const AboutMe: React.FC = () => {
+export const AboutMe: React.FC<AboutMeProps> = () => {
     const [dot, setDot] = useState<number>(1);
     const carouselRef = useRef<HTMLDivElement>(null);
     const cardRefs = useRef<Array<HTMLDivElement | null>>([null, null, null, null]);
+
+    useEffect(() => {
+        cardRefs.current = cardRefs.current.slice(0, 4); // Adjust the number 4 if the number of cards changes
+    }, []);
+
+    // Debounce function to minimize state updates
+    const debounce = useCallback((func: (num: number) => void, delay: number) => {
+        let timer: NodeJS.Timeout;
+        return function (...args: number[]) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func(...args);
+            }, delay);
+        };
+    }, []);
+
+    // Debounced version of setDot
+    const setDotDebounced = useCallback(debounce(setDot, 100), [debounce]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
@@ -14,19 +30,27 @@ export const AboutMe: React.FC = () => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     const num = id ? parseInt(id.replace('card', ''), 10) : 1;
-                    setDot(num);
+                    if (num !== dot) { // Update only when the active dot actually changes
+                        setDotDebounced(num);
+                    }
                 }
             });
         }, {
             root: carouselRef.current,
             rootMargin: '0px',
-            threshold: 0.5 // Adjust this value based on when you want the dot to change (0.5 means 50% of the item is visible)
+            threshold: 0.5
         });
 
         const cards = cardRefs.current;
-        cards.forEach(card => {
+        cards.forEach((card, index) => {
             if (card) {
                 observer.observe(card);
+            } else {
+                // Assign refs if they are not already assigned
+                cards[index] = document.getElementById(`card${index + 1}`) as HTMLDivElement;
+                if (cards[index]) {
+                    observer.observe(cards[index]);
+                }
             }
         });
 
@@ -37,7 +61,7 @@ export const AboutMe: React.FC = () => {
                 }
             });
         };
-    }, []); // Empty dependency array ensures this effect runs only once at mount
+    }, [dot, setDotDebounced]); // Empty dependency array ensures this effect runs only once at mount
 
     return (
         <div className={styles.container} id="about">
@@ -54,7 +78,8 @@ export const AboutMe: React.FC = () => {
                 </div>
                 <div className={styles.carousel}>
                     {[1, 2, 3, 4].map(num => (
-                        <div key={num} id={`card${num}`} ref={el => cardRefs.current[num - 1] = el} >
+
+<div key={num} id={`card${num}`} ref={el => cardRefs.current[num - 1] = el} className={`${styles.card} `}>
                             {num === 1 && (
                                 <div id="card1" className={`${styles.section} ${styles.card}`}>
                                     <p>
@@ -70,7 +95,7 @@ export const AboutMe: React.FC = () => {
                             {num === 3 && (
                                 <div id="card3" className={`${styles.section2} ${styles.card}`}>
                                     <p>
-                                        <b className={styles.subs2}>Skills and Technologies</b><br /><br /> I'm experienced with technologies like <b>React, Node.js, NextJS</b> and more.<br /> I focus on <b>creating applications</b> that are not just functional but also great to look at and easy to use.
+                                        <b className={styles.subs2}>Skills and Technologies</b><br /><br /> I'm experienced with technologies like <b>React, Node.js, NextJS</b> and more.<br /> I focus on <b>creating applications</b> that are not just functional but also great to look at and easy to use. I love my apps to be interactive.
                                     </p>
                                 </div>)}
                             {num === 4 && (
@@ -96,24 +121,3 @@ export const AboutMe: React.FC = () => {
 
 
 
-
-{/* <p><b>Offerings:</b></p>
-<p>
-
-<li>End-to-end development from initial idea to final product.</li>
-<li>Collaborative updates to ensure the project is aligning with your expectations.</li>
-<li>Quick iterations to adapt features according to your feedback.</li>
-<b>Get in Touch!</b> If you’re looking to build something new or improve an existing application, I’d love to help. Let’s make your project a success together!
-</p> */}
-
-{/* <p>Hi, I'm Diane, a full-stack developer based in Paris 🥖.
-    I have a passion for designing 🖍 and creating web applications with good design 🎨. 
-    I am an ex-fashion designer 👗 who turned into a developer 👩🏻‍💻. 
-    
-    I am graduated in Computer Science at 42 school in Paris but I also own a master in Design.
-
-    I love to learn new technologies and share my knowledge with others.
-    I am a creative, problem solver, and team player.
-    I build web and mobile applications with a focus on user experience, design and performance.
-    I built a startup called "Evenly" that helps people organize their events.
-</p> */}
