@@ -1,29 +1,99 @@
 .container {
     max-width: 1200px;
-    margin: 0 20px;
     padding: 20px 40px;
-    background-color: #ffffff;
     border-radius: 18px;
-    box-shadow: 3px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* margin: 30px 0px; */
+    height: 100vh;
+    /* background-color: #ffffff; */
+    /* box-shadow: 3px 5px 10px 2px rgba(0, 0, 0, 0.1); */
 }
 
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 20px;
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
     padding: 20px;
 }
 
+
+.carouselContainer {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    padding-top: 10%;
+}
+
+.navigationDots {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.carousel {
+    flex: 1;
+    overflow: scroll;
+    position: relative;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 30px; /* Adjust this value to match your actual top padding or desired snapping position */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dotActive {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    margin: 5px;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    backface-visibility: hidden;
+    max-width: 420px;
+    padding: 26px;
+    margin: 30px 0px;
+    border-radius: 10px;
+    scroll-snap-align: start;
+}
+
+.card:target{
+    opacity: 1;
+    filter: blur(0px);
+}
+
 .container h1 {
-    font-size: 98px;
+    font-size: 78px;
 }
 
 .container p {
-    font-size: 1rem;
+    font-size: 21px;
     margin-bottom: 1rem;
     font-family: 'Raleway';
     padding: 10px;
-    
 }
 
 .subs {
@@ -56,53 +126,34 @@
 
 .section{
     background-color: var(--color1-ultralight);
-    transform: scale(1.05);
-    border-radius: 10px;
-    margin-right: 12px;
+    margin-top: 20%;
 }
 
 .section1{
     background-color: var(--color2-ultralight);
-    transform: scale(1.05);
-    border-radius: 10px;
-    margin-left: 12px;
 }
 
 .section2{
     background-color: var(--color3-ultralight);
-    transform: scale(1.05);
-    border-radius: 10px;
-    margin-right: 12px;
 }
 
 .section3{
     background-color: var(--color5-light);
-    transform: scale(1.05);
-    border-radius: 10px;
-    margin-left: 12px;
+    margin-bottom: 20%;
 }
 
-.section:hover{
-    transform: scale(1.08);
-    transition: all 0.3s ease;
-}
-
-.section1:hover{
-    transform: scale(1.08);
-    transition: all 0.3s ease;
-}
-
-.section2:hover{
-    transform: scale(1.08);
-    transition: all 0.3s ease;
-}
-
-.section3:hover{
-    transform: scale(1.08);
-    transition: all 0.3s ease;
-}
 
 @media (max-width: 768px) {
+
+    .container {
+        display: block;
+        height: auto;
+    }
+
+    .container h1 {
+        font-size: 60px;
+    }
+
     .wrapper {
         grid-template-columns: 1fr;
         padding: 10px;

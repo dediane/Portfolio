@@ -14,8 +14,10 @@
 }
 
 .floating {
-    border: 1px solid var(--color2);
-    background-color: var(--color2-light);
+    /* border: 1px solid var(--color2);
+    background-color: var(--color2-light); */
+    border: 1px solid var(--text-color);
+    background-color: var(--text-contrast);
     border-radius: 42px;
     flex: 1.5;
     margin: 20px auto;
@@ -40,7 +42,8 @@
 }
 
 .floating a {
-    color: var(--color2);
+    /* color: var(--color2); */
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600; 
     font-size: 18px;  
@@ -50,11 +53,22 @@
 }
 
 .floating a:hover {
-    background-color: var(--color2); 
+    background-color: var(--text-color); 
     color: var(--text-contrast); 
-
+    animation: slide 0.5s forwards;
 }
 
+@keyframes slide {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
 .navbar ul {
     list-style-type: none;
     margin: 0;

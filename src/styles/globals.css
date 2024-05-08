@@ -38,7 +38,7 @@ body {
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     transition: color 0.2s ease-out, background-color 0.2s ease-out;
     background-color: var(--background-color);
-    background-image: radial-gradient(#ddc0bd 0.8px, rgba(255, 255, 255, 0) 0.8px);
+    background-image: radial-gradient(var(--dots) 0.8px, rgba(255, 255, 255, 0) 0.8px);
     background-size: 18px 18px;
     scroll-behavior: smooth;
 }
@@ -58,27 +58,9 @@ a {
 
 /* Light mode colors */
 :root {
-    /* --background-color: #ffffff;
-    --text-color: #333333;
-    --text-contrast: #ffffff;
-    --link-color: #0070f3;
-    --color1: #7125ff;
-    --color1-light: #d0b6ff;    
-    --color1-ultralight: #f6f1ff;    
-    --color2: #ff77a7;
-    --color2-light: #ffe8f6;    
-    --color2-ultralight: #ffedf8;    
-    --color3: #17b6ff;
-    --color3-light: #edf7ff;
-    --color3-ultralight: #d7edff;
-    --color4: #FFDA36;
-    --color4-light: #fff9e3;
-    --color4-ultralight: #fffdf7;
-    --color5: #41FF92;
-    --color5-light: #e3ffef;
-    --header-bg-color: #f0f0f0; */
     --background-color: #fffefe;
-    --text-color: #333333;
+    --dots: #ddc0bd;
+    --text-color: #1a1a1a;
     --text-contrast: #ffffff;
     --link-color: #0070f3;
     --color1: #7125ff;
@@ -102,7 +84,8 @@ a {
 /* @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #121212;
-        --text-color: #dddddd;
+        --dots: #333333;
+        --text-color: #ffffff;
         --link-color: #0096ff;
         --header-bg-color: #1e1e1e;
     }

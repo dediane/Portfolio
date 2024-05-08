@@ -7,7 +7,6 @@
 }
 
 .header h1 {
-    font-family: 'TommySoft';
     margin: 0;
     padding: 0;
 }
@@ -28,18 +27,27 @@
 }
 
 .title {
-    font-size: 98px;
+    font-family: 'TommySoft';
+    font-size: 108px;
+
 }
 
 .title2 {
+    font-family: 'TommySoft';
     font-size: 48px;
 }   
 
 .title3 {
+    // font-family: 'TommySoft';
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 98px;
+    color: var(--text-contrast);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--text-color);
 }   
 
 .title4 {
+    font-family: 'TommySoft';
     font-size: 98px;
 }   
 

@@ -25,12 +25,12 @@ const Loader = () => {
                 exit={{ opacity: 0, y: -400 }}
                 transition={{ duration: 0.6 }}
                 >
-                <Image src={svg1} alt="svg1" className={`${styles.shape} ${styles.rotating2}`} />
+                {/* <Image src={svg1} alt="svg1" className={`${styles.shape} ${styles.rotating2}`} />
                 <Image src={svg2} alt="svg2" className={`${styles.shape1} ${styles.rotating}`} />
                 <Image src={svg3} alt="svg3" className={`${styles.shape2} ${styles.rotating}`} />
                 <Image src={svg4} alt="svg4" className={`${styles.shape3} ${styles.rotating}`} />
                 <Image src={svg5} alt="svg5" className={`${styles.shape4} ${styles.rotating2}`}/>
-                <Image src={svg6} alt="svg6" className={`${styles.shape5} ${styles.rotating2}`} />
+                <Image src={svg6} alt="svg6" className={`${styles.shape5} ${styles.rotating2}`} /> */}
             </motion.div >)
             </AnimatePresence>
             <div className={styles.wrapper}>
