@@ -6,8 +6,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <div>
             {/* <Navbar /> */}
-            {/* <Transition>{children}</Transition> */}
-            {children}
+            <Transition>{children}</Transition>
+            {/* {children} */}
         </div>
     );
 }

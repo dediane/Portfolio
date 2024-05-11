@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import React, { useRef } from 'react'
 import { Inter, Mystery_Quest } from 'next/font/google'
 import { Header } from '@/components/_header'
 import { AboutMe } from '@/components/_aboutme'
@@ -8,17 +9,12 @@ import styles from '@/styles/index.module.css'
 import MouseTracker from '@/components/_mouseTracker'
 import { Contact } from '@/components/_contact'
 import { Navbar } from '@/components/_navbar'
-import { motion } from 'framer-motion';
-
-const pageVariants = {
-  initial: { opacity: 0, x: 100 },
-  in: { opacity: 1, x: 0 },
-  out: { opacity: 0, x: -100 }
-};
-
-const inter = Inter({ subsets: ['latin'] })
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Home } from '@/components/_home'
 
 export default function Homepage() {
+
   return (
     <>
       <Head>
@@ -28,15 +24,9 @@ export default function Homepage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.container}>
-        <div>
-          {/* <MouseTracker/> */}
-          <Navbar />
-          <Header />
-          <AboutMe />
-          <MyStack />
-          <Contact />
-        </div>
+        <Navbar />
+        <Home />
       </main>
     </>
-  )
+  );
 }

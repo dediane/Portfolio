@@ -16,14 +16,14 @@ const Loader = () => {
             initial={{ opacity: 0, y: 400 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -400 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
         >
             <AnimatePresence>
              (<motion.div
                 initial={{ opacity: 0, y: 400 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -400 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
                 >
                 {/* <Image src={svg1} alt="svg1" className={`${styles.shape} ${styles.rotating2}`} />
                 <Image src={svg2} alt="svg2" className={`${styles.shape1} ${styles.rotating}`} />

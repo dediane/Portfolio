@@ -75,14 +75,18 @@ const TechnologyStack = ({ title, technologies }: any) => {
 export const MyStack = () => (
     <>
         <div className={styles.container}>
-            <h1>TOOLS I LOVE TO USE</h1>
-            <div className={styles.wrapper}>
-                <TechnologyStack title="Front-End" technologies={frontEndTechnologies} />
-                <TechnologyStack title="Back-End" technologies={backEndTechnologies} />
-                <TechnologyStack title="Tools" technologies={toolTechnologies} />
-                <TechnologyStack title="Skills" technologies={Skills} />
-                {/* <Tools />
-          <Skills /> */}
+            <div className={styles.wrap}>
+            <div className={styles.left}>
+                <h1>TOOLS I LOVE TO USE</h1>
+            </div>
+            <div className={styles.right}>
+                <div className={styles.wrapper}>
+                    <TechnologyStack title="Front-End" technologies={frontEndTechnologies} />
+                    <TechnologyStack title="Back-End" technologies={backEndTechnologies} />
+                    <TechnologyStack title="Tools" technologies={toolTechnologies} />
+                    <TechnologyStack title="Skills" technologies={Skills} />
+                </div>
+            </div>
             </div>
         </div>
     </>

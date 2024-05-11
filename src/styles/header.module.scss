@@ -1,9 +1,12 @@
 .header {
     max-width: 1200px;
-    margin: 0 auto;
+    height: 100vh;
+    margin: auto;
     padding: 20px;
     display: flex;  
-    z-index: 1; 
+    z-index: 1;
+    align-items: center;
+    justify-content: center; 
 }
 
 .header h1 {
@@ -81,9 +84,6 @@
 
 
 .leftsection button {
-    /* background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color); */
     padding: 20px 20px;
     border-radius: 54px;
     font-size: 18px;
@@ -109,12 +109,6 @@
     background-color: var(--color1-light);
     transition: all 0.8s ease;
 }
-
-// .button2:hover {
-//     border: 2px solid var(--color1);
-//     color: var(--color1-light);
-//     background-color: var(--color1);
-// }
 
 .button2:hover {
   color: var(--color1);
@@ -155,6 +149,29 @@
   inherits: true;
   initial-value: 0turn;
 }
+
+.blob{
+    background-image: url('/assets/diane.jpg');
+    width: 380px;
+    height: 380px;
+    background-size: cover;
+    -webkit-background-position: center;
+    background-position: center center;
+    margin: 20px;
+    // box-shadow: 0 5px 5px 5px rgba(155, 93, 200, 0.2);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes animate {
+    0%, 100%{
+        border-radius: 60% 40% 30% 50% / 60% 30% 50% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     .header {

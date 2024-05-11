@@ -59,6 +59,7 @@ export const Header = () => {
             </div>
 
             <div className={styles.rightsection}>
+                <div className={styles.blob}></div>
                 {/* <Image src={diane} alt="Diane" width={500} height={710} style={{ objectFit: 'cover' }} /> */}
             </div>
         </div>

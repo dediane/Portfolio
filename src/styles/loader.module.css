@@ -132,16 +132,16 @@
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
     animation: 
-      typewriter 1.8s steps(40, end) 0.5s 1 normal both;
+      typewriter 1.2s steps(40, end) 0.5s 1 normal both;
       
   }
   
   .title2 {
-    animation-delay: 1s; /* Delays the start of the animation */
+    animation-delay: 0.5s; /* Delays the start of the animation */
   }
   
   .title3 {
-    animation-delay: 1.2s;
+    animation-delay: 0.75s;
   }
 
   .wrapper {

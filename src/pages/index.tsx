@@ -10,15 +10,15 @@ const Home = () => {
     const [isExiting, setIsExiting] = useState(false);
     const [homePageVisible, setHomePageVisible] = useState(false);
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setIsExiting(true);
-    //         setTimeout(() => {
-    //         setHomePageVisible(true)}, 500); // Redirect to the actual homepage
-    //     }, 3000); // Wait for 3 seconds before redirecting
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsExiting(true);
+            setTimeout(() => {
+            setHomePageVisible(true)}, 500); // Redirect to the actual homepage
+        }, 3000); // Wait for 3 seconds before redirecting
 
-    //     return () => clearTimeout(timer);
-    // }, [router]);
+        return () => clearTimeout(timer);
+    }, [router]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -49,7 +49,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: '100vh' }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 , y: '-100vh' }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.25 }}
                 >
                     <Homepage />
                 </motion.div>
