@@ -81,7 +81,7 @@
 
 
 .logos a:hover {
-    background-color: var(--color2); 
+    background-color: var(--color); 
     color: var(--text-contrast);
 
 }

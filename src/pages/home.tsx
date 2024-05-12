@@ -10,7 +10,7 @@ import MouseTracker from '@/components/_mouseTracker'
 import { Contact } from '@/components/_contact'
 import { Navbar } from '@/components/_navbar'
 import { AnimatePresence, motion, useScroll } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { InView, useInView } from 'react-intersection-observer';
 import { Home } from '@/components/_home'
 
 export default function Homepage() {
@@ -25,6 +25,19 @@ export default function Homepage() {
       </Head>
       <main className={styles.container}>
         <Navbar />
+        {/* <InView triggerOnce={false} threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.h3
+                            ref={ref}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 1 }}
+                            className={styles.deco}
+                        >
+                            웹 개발자 웹 디자이너 풀 스택 엔지니어
+                        </motion.h3>
+                    )}
+                </InView> */}
         <Home />
       </main>
     </>

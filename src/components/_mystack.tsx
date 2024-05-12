@@ -17,6 +17,7 @@ import photoshop from "/public/logos/photoshop-plain.svg";
 import illustrator from "/public/logos/illustrator-plain.svg";
 
 const TechnologyComponent = ({ tech, handleInteraction }: any) => (
+    <>
     <Image
         priority
         src={tech.src}
@@ -27,7 +28,8 @@ const TechnologyComponent = ({ tech, handleInteraction }: any) => (
         onMouseLeave={() => handleInteraction('', '')}
         onTouchStart={() => handleInteraction(tech.name, tech.description)}
         onTouchEnd={() => handleInteraction('', '')}
-    />
+        />
+    </>
 );
 
 const DisplayArea = ({ techName, techDescription }: any) => (

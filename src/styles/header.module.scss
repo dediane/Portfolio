@@ -9,15 +9,24 @@
     justify-content: center; 
 }
 
+.arrow {
+    transform: rotate(-45deg);
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
 .header h1 {
-    margin: 0;
+    font-family: 'Raleway';
+    font-size: 46px;
+    font-weight: 400;
+    margin: 20px 0 0 0 ;
     padding: 0;
 }
 
 .header h2 {
     font-family: 'Raleway';
-    font-size: 21px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 200;
     margin: 20px 0 0 0 ;
     padding: 0;
 }
@@ -26,7 +35,13 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-top: 20px;
+}
+
+.rightsection {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -57,29 +72,6 @@
 .title span {
     color: var(--text-color);
     transition: transform 0.5s ease, color 0.5s ease; /* Smooth transitions for transform and color */
-}
-
-/* Keyframes for the scaling and color effect */
-@keyframes magnify {
-    0%, 100% { 
-        transform: scaleX(1);
-    }
-    50% { 
-        transform: scaleX(1.5); /* Slightly magnify */
-    }
-}
-
-.title:hover span {
-    animation: magnify 3.6s infinite; /* Constant animation */
-}
-
-.rightsection img {
-    transition: transform 1s ease-in-out; /* Smooth transition for transform */
-    transform: scale(0.9);
-}
-
-.rightsection img:hover {
-    transform: scale(1); /* Slightly magnify */
 }
 
 
@@ -152,8 +144,8 @@
 
 .blob{
     background-image: url('/assets/diane.jpg');
-    width: 380px;
-    height: 380px;
+    width: 400px;
+    height: 400px;
     background-size: cover;
     -webkit-background-position: center;
     background-position: center center;

@@ -1,12 +1,11 @@
 .container {
     max-width: 1200px;
-    padding: 20px 40px;
-    border-radius: 18px;
     justify-content: center;
     align-items: center;
     display: flex;
     height: 100vh;
-    margin: 0 auto;
+    margin: auto;
+    /* background-color: aqua; */
 }
 
 .left {
@@ -14,18 +13,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    flex: 1;
     padding: 20px;
+    height: 100%;
+    position: relative;
+    /* background-color: blueviolet; */
+}
+
+.tag {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color);
+}
+
+.tag2 {
+    position: absolute;
+    width: 160px;
+    height:160px;
+    border-radius: 50%;
+    border: 2px solid var(--color);
 }
 
 
 .carouselContainer {
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 560px;
     overflow: hidden;
     padding-top: 10%;
-    /* background-color: blue; */
+    flex: 2.4;
 }
 
 .navigationDots {
@@ -47,7 +65,6 @@
     scroll-behavior: smooth;
     -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-    /* background-color: greenyellow; */
 }
 
 
@@ -74,84 +91,63 @@
     cursor: pointer;
 }
 
+.cardhold {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    backface-visibility: hidden;
+    max-width: 600px;
+    margin: 0px auto;
+    border-radius: 10px;
+    scroll-snap-align: start;
+    /* background-color: var(--background-color); */
+}
+
 .card {
     width: 100%;
     transition: transform 0.5s ease-in-out;
     backface-visibility: hidden;
-    max-width: 520px;
-    padding: 26px 20px;
-    margin: 0px 0px;
+    max-width: 600px;
+    padding: 32px 10px;
+    margin: 0px auto;
     border-radius: 10px;
     scroll-snap-align: start;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
     /* background-color: aqua; */
-    height: 100%;
+    height: 84%;
 }
 
 .card:target{
     opacity: 1;
 }
 
+.card hr {
+    border: 0;
+    height: 1px;
+    background: var(--text-color);
+    margin: 40px 0;
+}
+
 .container h1 {
     font-size: 78px;
+
 }
 
 .container p {
-    font-size: 21px;
+    font-size: 16px;
     margin-bottom: 1rem;
     font-family: 'Raleway';
+    font-weight: 200;
     padding: 10px;
 }
 
 .subs {
-    font-size: 1.6rem;
+    font-size: 42px;
     margin-bottom: 1rem;
-    font-family: 'TommySoft';
-    color: var(--color1);
-}
-
-.subs1 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-family: 'TommySoft';
-    color: var(--color2)
-}
-
-.subs2 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-family: 'TommySoft';
-    color: var(--color3)
-}
-
-.subs3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-family: 'TommySoft';
-    color: var(--color5)
-}
-
-.section{
-    background-color: var(--color1-ultralight);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color1-light);
-}
-
-.section1{
-    background-color: var(--color2-ultralight);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color2-light);
-}
-
-.section2{
-    background-color: var(--color3-ultralight);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color3-light);
-}
-
-.section3{
-    background-color: var(--color5-light);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--color5-light);
+    font-family: 'Raleway';
+    color: var(--text-color);
 }
 
 

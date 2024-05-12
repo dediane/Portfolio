@@ -11,38 +11,65 @@
 @font-face {
     font-family: 'Raleway';
     src: url('/fonts/raleway/Raleway-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Raleway';
     src: url('/fonts/raleway/Raleway-Bold.ttf') format('truetype');
-    font-weight: bold;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway/Raleway-Medium.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Raleway';
     src: url('/fonts/raleway/Raleway-Light.ttf') format('truetype');
-    font-weight: light;
+    font-weight: 300;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('/fonts/raleway/Raleway-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+
 /* Base styles */
-html,
-body {
+html, body {
     padding: 0;
     margin: 0;
-    font-family:'TommySoft', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: 'TommySoft', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Puts the background behind other content */
     transition: color 0.2s ease-out, background-color 0.2s ease-out;
     background-color: var(--background-color);
     background-image: radial-gradient(var(--dots) 0.8px, rgba(255, 255, 255, 0) 0.8px);
     background-size: 18px 18px;
-    scroll-behavior: smooth;
 }
 
+body {
+    position: relative;
+}
 
 a {
     color: inherit;
@@ -59,9 +86,10 @@ a {
 /* Light mode colors */
 :root {
     --background-color: #fffefe;
-    --dots: #ddc0bd;
+    --dots: #b5b5b596;
     --text-color: #1a1a1a;
     --text-contrast: #ffffff;
+    --color: #0d2cfa;
     --link-color: #0070f3;
     --color1: #7125ff;
     --color1-light: #e7daff;    

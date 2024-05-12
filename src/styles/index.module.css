@@ -14,3 +14,13 @@
     scroll-snap-stop: always; /* Ensure a smooth snap effect */
     width: 100%; /* Ensure it covers the full width */
 }
+
+/* .deco {
+    position: absolute;
+    font-size: 180px;
+    color: var(--color);
+    opacity: 0.5;
+    z-index: -1;
+    top: 0;
+    left: 0;
+} */

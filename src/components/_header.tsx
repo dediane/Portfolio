@@ -1,66 +1,50 @@
 import React, { useEffect, useRef } from "react";
 import styles from "@/styles/header.module.scss";
 import Image from "next/image";
-
+import { FaArrowDown } from "react-icons/fa6";
 import diane from "/public/assets/diane2.png";
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
 
 export const Header = () => {
-    const titleRef = useRef(null);
-
-    // useEffect(() => {
-    //     const title: any = titleRef.current;
-        // const spans: any = title.querySelectorAll('span');
-        // let lastColor = -1; 
-    //     const colors = ['#ff77a7', '#FFA500', '#FFDA36', '#41FF92', '#17b6ff', '#e957fc', '#8f5dec'];
-
-    //     function assignRandomColors() {
-    //         spans.forEach((span: { style: { color: string; }; }) => {
-    //             const colorIndex = Math.floor(Math.random() * colors.length);
-    //             span.style.color = colors[colorIndex];
-    //         });
-    //     }
-
-    //     assignRandomColors();
-
-    //     function randomizeAnimation() {
-    //         spans.forEach((span: { style: any }) => {
-
-    //             let colorIndex;
-    //             do {
-    //                 colorIndex = Math.floor(Math.random() * colors.length);
-    //             } while (colorIndex === lastColor); 
-    //             span.style.color = colors[colorIndex];
-    //             span.style.animationDelay = `${Math.random() * 3.6}s`; 
-    //             lastColor = colorIndex;
-    //         });
-    //     }
-
-    //     title.addEventListener('mouseenter', randomizeAnimation);
-
-    //     return () => {
-    //         title.removeEventListener('mouseenter', randomizeAnimation);
-    //     };
-    // }, []);
-
     return (
         <div className={styles.header}>
             <div className={styles.leftsection}>
-                {/* <h1 className={styles.title2}>Hi, it's Diane! I am a  </h1> */}
-                {/* <h1 className={styles.title} ref={titleRef}>
-                    <span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span>
-                </h1> */}
-                <h1 className={styles.title}>CREATIVE</h1>
+                <FaArrowDown className={styles.arrow}/>
+                <InView triggerOnce={false} threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.h1
+                            ref={ref}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 1 }}
+                        >
+                            Freelance
+                        </motion.h1>
+                    )}
+                </InView>
+                <InView triggerOnce={false} threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.h1
+                            ref={ref}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 1 }}
+                        >
+                            Designer & Developer
+                        </motion.h1>
+                    )}
+                </InView>
+                <h2>Fullstack developper specialized into crafting creative unique digital experiences.</h2>
+
+                {/* <h1 className={styles.title}>CREATIVE</h1>
                 <h1 className={styles.title3}>FULL-STACK</h1>
                 <h1 className={styles.title4}>DEVELOPPER</h1>
-                <h2>Freelance fullstack developper specializing into crafting creative unique digital experiences.</h2>
-
                 <button className={styles.button1}>Let's discuss about your project</button>
-                <button className={styles.button2}>Book a call</button>
+            <button className={styles.button2}>Book a call</button> */}
             </div>
-
             <div className={styles.rightsection}>
                 <div className={styles.blob}></div>
-                {/* <Image src={diane} alt="Diane" width={500} height={710} style={{ objectFit: 'cover' }} /> */}
             </div>
         </div>
     );
