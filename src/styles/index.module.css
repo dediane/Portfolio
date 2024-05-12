@@ -32,6 +32,10 @@
     width: 100%;
 }
 
+.scrollContainer {
+    height: 100vh;
+    overflow-y: auto;
+}
 /* .deco {
     position: absolute;
     font-size: 180px;

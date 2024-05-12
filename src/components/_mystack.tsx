@@ -2,6 +2,7 @@ import React from "react";
 import styles from "@/styles/mystack.module.css";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { frontEndTechnologies, backEndTechnologies, toolTechnologies, Skills } from "@/utils/technologies";
 
 //tools
@@ -15,6 +16,7 @@ import figma from "/public/logos/figma-original.svg";
 import sketch from "/public/logos/sketch-line.svg";
 import photoshop from "/public/logos/photoshop-plain.svg";
 import illustrator from "/public/logos/illustrator-plain.svg";
+import { InView } from "react-intersection-observer";
 
 const TechnologyComponent = ({ tech, handleInteraction }: any) => (
     <>
@@ -35,10 +37,17 @@ const TechnologyComponent = ({ tech, handleInteraction }: any) => (
 const DisplayArea = ({ techName, techDescription }: any) => (
     <div className={styles.titles}>
         {techName ? (
-            <div>
-                <p className={styles.technoName}>{techName}</p>
-                <p className={styles.technoDescription}>{techDescription}</p>
-            </div>
+            <InView triggerOnce={false} threshold={0.5}>
+                {({ ref, inView }) => (
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.3, delay: 0 }}>
+                        <p className={styles.technoName}>{techName}</p>
+                        <p className={styles.technoDescription}>{techDescription}</p>
+                    </motion.div>)}
+            </InView>
         ) : (
             <p className={styles.placeholder}></p>
         )}
@@ -57,16 +66,37 @@ const TechnologyStack = ({ title, technologies }: any) => {
     return (
         <div className={styles.card}>
             <div className={styles.title}>
-                <h1>{title}</h1>
+                <InView triggerOnce={false} threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.h1
+                            ref={ref}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.3, delay: 0.7 }}
+                        >{title}</motion.h1>
+                    )}
+                </InView>
+
                 <hr />
             </div>
-            <div className={styles.logos}>
-                {technologies.map((tech: any) => (
-                    <TechnologyComponent key={tech.name} tech={tech} handleInteraction={handleInteraction} />
+            <InView triggerOnce={false} threshold={0.5}>
+                {({ ref, inView }) => (
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={inView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.3, delay: 0.7 }}
+                        className={styles.logos}
+                    >
+                        {technologies.map((tech: any) => (
+                            <TechnologyComponent key={tech.name} tech={tech} handleInteraction={handleInteraction} />
 
-                ))}
-                <DisplayArea techName={techName} techDescription={techDescription} />
-            </div>
+                        ))}
+
+                    </motion.div>
+                )}
+            </InView>
+            <DisplayArea techName={techName} techDescription={techDescription} />
         </div>
     );
 };
@@ -74,29 +104,14 @@ const TechnologyStack = ({ title, technologies }: any) => {
 export const MyStack = () => (
     <>
         <div className={styles.container}>
-            {/* <div className={styles.wrapper}> */}
             <TechnologyStack title="Front-End" technologies={frontEndTechnologies} />
             <TechnologyStack title="Back-End" technologies={backEndTechnologies} />
-            {/* <TechnologyStack title="Tools" technologies={toolTechnologies} /> */}
-            {/* <TechnologyStack title="Skills" technologies={Skills} /> */}
-            {/* </div> */}
         </div>
-        {/* <div className={styles.section}>
-            </div> */}
-        {/* <div className={styles.container}>
-            <div className={styles.wrap}>
-            <div className={styles.left}>
-                <h1>TOOLS I LOVE TO USE</h1>
-            </div>
-            <div className={styles.right}>
-                <div className={styles.wrapper}>
-                    <TechnologyStack title="Front-End" technologies={frontEndTechnologies} />
-                    <TechnologyStack title="Back-End" technologies={backEndTechnologies} />
-                    <TechnologyStack title="Tools" technologies={toolTechnologies} />
-                    <TechnologyStack title="Skills" technologies={Skills} />
-                </div>
-            </div>
-            </div>
-        </div> */}
+
     </>
 );
+
+
+{/* <TechnologyStack title="Tools" technologies={toolTechnologies} /> */ }
+{/* <TechnologyStack title="Skills" technologies={Skills} /> */ }
+{/* </div> */ }

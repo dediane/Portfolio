@@ -1,12 +1,14 @@
 .header {
     max-width: 1200px;
-    height: calc(100vh - 100px);
+    height: calc(100vh);
+    top: 100px;
     margin: auto;
     padding: 20px;
     display: flex;  
     z-index: 1;
     align-items: center;
     justify-content: center; 
+    // background-color: aquamarine;
 }
 
 .arrow {

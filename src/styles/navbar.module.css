@@ -2,7 +2,7 @@
     position: absolute;
     overflow: hidden;
     margin: 0 auto;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
