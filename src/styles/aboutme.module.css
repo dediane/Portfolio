@@ -1,13 +1,22 @@
 .container {
+    /* background-color: var(--color); */
+    /* justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    margin: auto; */
+    /* background-color: var(--color); */
+    /* background-color: aqua; */
+}
+
+.wrapper {
     max-width: 1200px;
     justify-content: center;
     align-items: center;
     display: flex;
     height: 100vh;
     margin: auto;
-    /* background-color: aqua; */
 }
-
 .left {
     display: flex;
     flex-direction: column;
@@ -63,8 +72,8 @@
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
     scroll-behavior: smooth;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    /* -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); */
+    /* mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); */
 }
 
 

@@ -8,6 +8,7 @@
     align-items: center;
     z-index: 1;
     width: 100%;
+    max-height: 100px;
 }
 
 .floating, .title, .logos {
@@ -59,6 +60,7 @@
     color: var(--text-contrast); 
     animation: slide 0.5s forwards;
 }
+
 
 @keyframes slide {
     0% {

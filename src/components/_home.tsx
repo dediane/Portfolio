@@ -6,6 +6,7 @@ import styles from '@/styles/index.module.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HelpYou } from './_helpyou';
+import Loader from './Loader';
 
 export const Home = () => {
   const { ref: headerRef, inView: headerInView } = useInView({
@@ -29,14 +30,15 @@ export const Home = () => {
   });
   return (
     <AnimatePresence>
+      {/* <motion.div className={styles.section}><Loader /></motion.div> */}
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: -75 },
+          hidden: { opacity: 1, y: -75 },
           visible: { opacity: 1, y: 0 }
         }}
         initial="hidden"
         animate={headerInView ? "visible" : "hidden"}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 0.2, delay: 0 }}
         ref={headerRef}
         className={styles.section}>
         <Header />
@@ -44,7 +46,7 @@ export const Home = () => {
 
       <motion.div
         variants={{
-          hidden: { opacity: 0, x: -75 },
+          hidden: { opacity: 1, x: -75 },
           visible: { opacity: 1, x: 0 }
         }}
         initial="hidden"
@@ -57,7 +59,7 @@ export const Home = () => {
 
       <motion.div
         variants={{
-          hidden: { opacity: 0, x: 75 },
+          hidden: { opacity: 1, x: 0 },
           visible: { opacity: 1, x: 0 }
         }}
         initial="hidden"
@@ -70,7 +72,7 @@ export const Home = () => {
 
       <motion.div
         variants={{
-          hidden: { opacity: 0, x: 75 },
+          hidden: { opacity: 1, x: 0 },
           visible: { opacity: 1, x: 0 }
         }}
         initial="hidden"

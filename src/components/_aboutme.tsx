@@ -58,6 +58,7 @@ export const AboutMe: React.FC<any> = () => {
 
     return (
         <div className={styles.container} id="about">
+            <div className={styles.wrapper}>
             {/* <h1>A LITTLE BIT ABOUT ME</h1> */}
             <div className={styles.left}>
                 <div className={styles.tag2}></div>
@@ -137,6 +138,7 @@ export const AboutMe: React.FC<any> = () => {
                             </div>
                         ))}
                     </div>
+                </div>
                 </div>
         </div>
     );

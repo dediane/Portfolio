@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '@/styles/navbar.module.css';
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import { FaBars } from 'react-icons/fa';
 
 export const Navbar = () => {
     return (

@@ -8,7 +8,8 @@ export const Contact = () => {
     
     return (
         <div id="contact" className={styles.contact}>
-            <h1>Let's bring your project to life</h1>
+            <div className={styles.decoration}>
+            <h1>Let's work together</h1>
             <div className={styles.contactContainer}>
             <div className={styles.left}>
 
@@ -21,6 +22,7 @@ export const Contact = () => {
             </div>
             {/* <p>Feel free to reach out to me at <a href="mailto:dianedecourt@gmail.com">dianedecourt@gmail.com</a></p> */}
             {/* <Image src={diane} alt="Diane" width={500} height={710} style={{ objectFit: 'cover' }} /> */}
+        </div>
         </div>
     );
 }

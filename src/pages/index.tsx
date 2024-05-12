@@ -4,21 +4,22 @@ import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loader from '../components/Loader';
 import Homepage from './home';
+import styles from '@/styles/index.module.css';
 
 const Home = () => {
     const router = useRouter();
     const [isExiting, setIsExiting] = useState(false);
     const [homePageVisible, setHomePageVisible] = useState(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsExiting(true);
-            setTimeout(() => {
-            setHomePageVisible(true)}, 500); // Redirect to the actual homepage
-        }, 3000); // Wait for 3 seconds before redirecting
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setIsExiting(true);
+    //         setTimeout(() => {
+    //         setHomePageVisible(true)}, 500); // Redirect to the actual homepage
+    //     }, 5000); // Wait for 3 seconds before redirecting
 
-        return () => clearTimeout(timer);
-    }, [router]);
+    //     return () => clearTimeout(timer);
+    // }, [router]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,19 +43,16 @@ const Home = () => {
     }, [homePageVisible]);
 
     return (
-        <AnimatePresence>
-            {!isExiting &&<Loader />};
+        <>
+            {isExiting ?
+                <div className={`${styles.loaderExiting}`}><Loader /></div> :
+                <div><Loader /></div>};
             {homePageVisible && (
-                <motion.div
-                    initial={{ opacity: 0, y: '100vh' }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 , y: '-100vh' }}
-                    transition={{ duration: 0.25 }}
-                >
+                <div className={styles.homepageWrapper}>
                     <Homepage />
-                </motion.div>
+                </div>
             )}
-        </AnimatePresence>
+        </>
     );
 };
 
