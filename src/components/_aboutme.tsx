@@ -100,7 +100,7 @@ export const AboutMe: React.FC<any> = () => {
                                          animate={inView ? { opacity: 1, y: 0 } : {}}
                                          transition={{ duration: 0.5, delay: 0.3 }}
                                          >
-                                            <b className={styles.subs}>⏳ githubgBackground</b><hr /><br /><br /> I graduated from <b>42 school</b> in Paris with a degree in <b>Computer Science</b> and I also hold a <b>master's in Design</b>.<br /> I’ve worked on a variety of projects, including creating a <b>startup</b> called "Evenly" that helps people organize their events more efficiently.
+                                            <b className={styles.subs}>⏳ Background</b><hr /><br /><br /> I graduated from <b>42 school</b> in Paris with a degree in <b>Computer Science</b> and I also hold a <b>master's in Design</b>.<br /> I’ve worked on a variety of projects, including creating a <b>startup</b> called "Evenly" that helps people organize their events more efficiently.
                                          </motion.p>
                                           )}
                                           </InView>
