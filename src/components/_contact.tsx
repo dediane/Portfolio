@@ -11,17 +11,16 @@ export const Contact = () => {
             <div className={styles.decoborder}></div>
             <div className={styles.decoration}>
                 <div className={styles.contactContainer}>
-
-                    <Image src={diane} alt="Diane" width={100} height={100} style={{ objectFit: 'cover', borderRadius: 100, marginRight: 30, border: '4px solid var(--background-color'}} />
-                    <h1>Let's work together</h1>
-                </div>
-                <div className={styles.contactContainer}>
-                    <p>Feel free to reach out to me at <a href="mailto:"></a></p>
-                    <hr/>
+                    <div className={styles.contactHead}>
+                        <Image src={diane} alt="Diane" width={100} height={100} style={{ objectFit: 'cover', borderRadius: 100, marginRight: 30, border: '4px solid var(--background-color' }} />
+                        <h1>Let's work together</h1>
+                    </div>
+                    <div className={styles.contactBody}>
+                        <div className={styles.contactLine}></div>
+                        <div className={styles.contactButton}><a href='/contact'>Get in touch</a></div>
+                    </div>
                 </div>
             </div>
-            {/* <p>Feel free to reach out to me at <a href="mailto:dianedecourt@gmail.com">dianedecourt@gmail.com</a></p> */}
-            {/* <Image src={diane} alt="Diane" width={500} height={710} style={{ objectFit: 'cover' }} /> */}
         </div>
     );
 }

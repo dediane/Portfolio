@@ -1,13 +1,14 @@
 .header {
     max-width: 1200px;
     height: calc(100vh);
-    top: 100px;
+    // top: 100px;
     margin: auto;
     padding: 20px;
     display: flex;  
     z-index: 1;
     align-items: center;
     justify-content: center; 
+    position: relative;
     // background-color: aquamarine;
 }
 
@@ -15,15 +16,16 @@
     transform: rotate(-45deg);
     font-size: 36px;
     margin-bottom: 60px;
+    // color: var(--color);
 }
 
-.header h1 {
-    font-family: 'Raleway';
-    font-size: 46px;
-    font-weight: 400;
-    margin: 20px 0 0 0 ;
-    padding: 0;
-}
+// .header h1 {
+//     font-family: 'Raleway';
+//     font-size: 46px;
+//     font-weight: 400;
+//     margin: 20px 0 0 0 ;
+//     padding: 0;
+// }
 
 .header h2 {
     font-family: 'Raleway';
@@ -36,7 +38,7 @@
 .leftsection {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1.4;
 }
 
 .rightsection {
@@ -47,23 +49,29 @@
 }
 
 .title {
-    font-family: 'TommySoft';
-    font-size: 108px;
+    font-family: 'Raleway';
+    font-size: 100px;
+    color: var(--color);
+    font-weight: 700;
 
 }
 
 .title2 {
-    font-family: 'TommySoft';
-    font-size: 48px;
+    font-family: 'Raleway';
+    font-size: 100px;
+    color: transparent;
+    font-weight: 700;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--color);
 }   
 
 .title3 {
     // font-family: 'TommySoft';
     font-family: Arial, Helvetica, sans-serif;
     font-size: 98px;
-    color: var(--text-contrast);
+    color: var(--text-color);
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: var(--text-color);
+    // -webkit-text-stroke-color: var(--text-color);
 }   
 
 .title4 {

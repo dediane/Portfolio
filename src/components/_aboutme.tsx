@@ -85,7 +85,7 @@ export const AboutMe: React.FC<any> = () => {
                                          animate={inView ? { opacity: 1, y: 0 } : {}}
                                          transition={{ duration: 0.5, delay: 0.3 }}
                                         >
-                                            <b className={styles.subs}>Hi, I’m Diane,</b><hr /><br /><br /> A <b>full-stack developer</b> in Paris. 🥖<br /> I started my career as a <b>fashion designer</b> and then fell in love with <b>coding</b>.<br /> Now, I combine my design sensibilities with my tech skills to <b>build beautiful</b>, effective <b>web and mobile applications</b>.
+                                            <b className={styles.subs}>👋 Hi, I’m Diane,</b><hr /><br /><br /> A <b>full-stack developer</b> in Paris. 🥖<br /> I started my career as a <b>fashion designer</b> and then fell in love with <b>coding</b>.<br /> Now, I combine my design sensibilities with my tech skills to <b>build beautiful</b>, effective <b>web and mobile applications</b>.
                                         </motion.p>
                                         )}
                                         </InView>
@@ -100,7 +100,7 @@ export const AboutMe: React.FC<any> = () => {
                                          animate={inView ? { opacity: 1, y: 0 } : {}}
                                          transition={{ duration: 0.5, delay: 0.3 }}
                                          >
-                                            <b className={styles.subs}>Background</b><hr /><br /><br /> I graduated from <b>42 school</b> in Paris with a degree in <b>Computer Science</b> and I also hold a <b>master's in Design</b>.<br /> I’ve worked on a variety of projects, including creating a <b>startup</b> called "Evenly" that helps people organize their events more efficiently.
+                                            <b className={styles.subs}>⏳ githubgBackground</b><hr /><br /><br /> I graduated from <b>42 school</b> in Paris with a degree in <b>Computer Science</b> and I also hold a <b>master's in Design</b>.<br /> I’ve worked on a variety of projects, including creating a <b>startup</b> called "Evenly" that helps people organize their events more efficiently.
                                          </motion.p>
                                           )}
                                           </InView>
@@ -116,7 +116,7 @@ export const AboutMe: React.FC<any> = () => {
                                          animate={inView ? { opacity: 1, y: 0 } : {}}
                                          transition={{ duration: 0.5, delay: 0.3 }}
                                          >
-                                            <b className={styles.subs}>Skills and Technologies</b><hr /><br /><br /> I'm experienced with technologies like <b>React, Node.js, NextJS</b> and more.<br /> I focus on <b>creating applications</b> that are not just functional but also great to look at and easy to use. I love my apps to be interactive.
+                                            <b className={styles.subs}>👩🏻‍💻 Skills and Technologies</b><hr /><br /><br /> I'm experienced with technologies like <b>React, Node.js, NextJS</b> and more.<br /> I focus on <b>creating applications</b> that are not just functional but also great to look at and easy to use. I love my apps to be interactive.
                                          </motion.p>
                                             )}
                                             </InView>
@@ -130,7 +130,7 @@ export const AboutMe: React.FC<any> = () => {
                                          initial={{ opacity: 0, y: 20 }}
                                          animate={inView ? { opacity: 1, y: 0 } : {}}
                                          transition={{ duration: 0.4, delay: 0.3 }}
-                                         ><b className={styles.subs}>Working With Me</b><hr /><br /> <br />I like keeping things <b>simple and transparent</b> with my clients. I’ll work with you to understand what you need, and I'll keep you updated as I bring our shared <b>vision to life</b>. I love Agile methodologies and I'm always open to feedback.
+                                         ><b className={styles.subs}>🤝 Working With Me</b><hr /><br /> <br />I like keeping things <b>simple and transparent</b> with my clients. I’ll work with you to understand what you need, and I'll keep you updated as I bring our shared <b>vision to life</b>. I love Agile methodologies and I'm always open to feedback.
                                          </motion.p>
                                             )}
                                             </InView>

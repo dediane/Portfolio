@@ -24,7 +24,7 @@ const Home = () => {
                 setTimeout(() => {
                     setHomePageVisible(true);
                     containerRef.current?.scrollTo(0, 0); // Scroll to the top of the page
-                }, 500); // Optionally keep the delay before fully showing the homepage
+                }, 10); // Optionally keep the delay before fully showing the homepage
             }
         }
         };
@@ -41,10 +41,10 @@ const Home = () => {
 
     return (
         <>
-            {isExiting ?
+            {isExiting ? 
                 <div className={`${styles.loaderExiting}`}><Loader /></div> :
                 <div ref={containerRef} className={styles.scrollContainer}><Loader /></div>};
-            {homePageVisible && (
+            {homePageVisible && ( 
                 <div className={styles.homepageWrapper}>
                     <Homepage />
                 </div>

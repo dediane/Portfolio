@@ -10,16 +10,17 @@ export const Header = () => {
     return (
         <div className={styles.header}>
             <div className={styles.leftsection}>
-                <FaArrowDown className={styles.arrow}/>
+                    {/* <FaArrowDown className={styles.arrow}/> */}
                 <InView triggerOnce={false} threshold={0.5}>
                     {({ ref, inView }) => (
                         <motion.h1
                             ref={ref}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: -20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: 1 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className={styles.title}
                         >
-                            Freelance
+                            CREATIVE
                         </motion.h1>
                     )}
                 </InView>
@@ -27,15 +28,29 @@ export const Header = () => {
                     {({ ref, inView }) => (
                         <motion.h1
                             ref={ref}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: -20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.5, delay: 1 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                            className={styles.title2}
                         >
-                            Designer & Developer
+                            FULLSTACK
                         </motion.h1>
                     )}
                 </InView>
-                <h2>Fullstack developper specialized into crafting creative unique digital experiences.</h2>
+                <InView triggerOnce={false} threshold={0.5}>
+                    {({ ref, inView }) => (
+                        <motion.h1
+                            ref={ref}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            className={styles.title}
+                        >
+                            DEVELOPPER
+                        </motion.h1>
+                    )}
+                </InView>
+                <h2>Freelance fullstack developper specialized into crafting creative unique digital experiences.</h2>
 
                 {/* <h1 className={styles.title}>CREATIVE</h1>
                 <h1 className={styles.title3}>FULL-STACK</h1>
