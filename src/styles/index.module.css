@@ -30,6 +30,7 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
     width: 100%;
+    overflow-x: hidden; /* Hide horizontal scroll overflow */
 }
 
 .scrollContainer {

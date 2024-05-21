@@ -1,19 +1,23 @@
 .wrapper {
-    max-width: 1200px;
+    max-width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin: auto;
-    height: 100vh;
+    justify-content: flex-start; /* Align items to the start */
+    height: 110vh;
     background-color: aqua;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable scroll snapping */
+    scroll-behavior: smooth; /* Smooth scroll behavior */
 }
 
 .dot {
-    height: 500px;
-    width: 800px;
+    height: 100vh; /* Make each dot take up the full height of the wrapper */
+    min-width: 100vw; /* Make each dot take up the full width of the viewport */
     background-color: #bbb;
     display: inline-block;
+    scroll-snap-align: start; 
+    scroll-snap-stop: always;
 }
 
 .dot:first-child {

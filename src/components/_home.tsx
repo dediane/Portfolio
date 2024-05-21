@@ -9,9 +9,13 @@ import { HelpYou } from './_helpyou';
 import Loader from './Loader';
 import { Projects } from './_projects';
 import Footer from './_footer';
+import { useEffect, useRef, useState } from 'react';
 
 
 export const Home :React.FC = () => {
+  const containerRef = useRef(null);
+  const projectsRef = useRef(null);
+  const [isHorizontalScroll, setIsHorizontalScroll] = useState(true);
 
   const { ref: headerRef, inView: headerInView } = useInView({
     triggerOnce: false,
@@ -33,7 +37,7 @@ export const Home :React.FC = () => {
     threshold: 0.5
   });
 
-  const { ref: projectsRef, inView: projectsInView } = useInView({
+  const { ref: projectsInViewRef, inView: projectsInView } = useInView({
     triggerOnce: false,
     threshold: 0.5
   });
@@ -88,9 +92,11 @@ export const Home :React.FC = () => {
         initial="hidden"
         animate={projectsInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.2 }}
-        ref={projectsRef}
+        ref={projectsInViewRef}
         className={styles.section}>
-        <Projects />
+          <div ref={projectsRef}>
+            <Projects />
+          </div>
       </motion.div>
 
       <motion.div
