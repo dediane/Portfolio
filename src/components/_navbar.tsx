@@ -2,12 +2,15 @@ import React, { useEffect } from 'react';
 import styles from '@/styles/navbar.module.css';
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import { FaBars } from 'react-icons/fa';
+import Link from 'next/link';
 
 export const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             <div className={styles.title}>
+                <Link href='/'>
                 <h4>👋 Hi, it's Diane</h4>
+                </Link>
             </div>
             <div className={styles.floating}>
                 <ul>
@@ -18,7 +21,7 @@ export const Navbar = () => {
                         <a href="#projects">Projects</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>

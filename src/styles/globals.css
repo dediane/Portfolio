@@ -51,12 +51,22 @@ html, body {
     font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     scroll-behavior: smooth;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     /* overflow-y: scroll; */
     /* min-height: 109vh; */
     display: flex;
     flex-direction: column;
 }
+
+::-moz-selection {
+    color: var(--text-contrast);
+    background: var(--color);
+  }
+  
+  ::selection {
+    color: var(--text-contrast);
+    background: var(--color);
+  }
 
 body::before {
     content: "";
@@ -94,7 +104,9 @@ a {
     --dots: #b5b5b596;
     --text-color: #1a1a1a;
     --text-contrast: #ffffff;
+    --text-contrast-transparent: #ffffff45;
     --color: #0d2cfa;
+    --color-muted: #0c26c9;
     --link-color: #0070f3;
     --color1: #7125ff;
     --color1-light: #e7daff;    

@@ -1,8 +1,67 @@
+.formItem::-moz-selection {
+    background: var(--text-contrast) !important;
+    color: var(--color) !important;
+  }
+  
+.formItem::selection {
+    background: var(--text-contrast) !important;
+    color: var(--color) !important;
+  }
+
 .container {
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: auto;
     padding-top: 10%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+}
+
+.card {
+    border: 1px solid var(--color);
+    background-color: var(--color-muted);
+    color: var(--text-contrast);
+    padding: 20px;
+    border-radius: 20px;
+    min-width: 700px;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    flex: 8;
+}
+
+.formItem label {
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.formItem input, .formItem textarea {
+    background-color: inherit;
+    border: none;
+    border-top: 1px solid var(--text-contrast-transparent);
+    padding: 20px;
+}
+
+.formItem input:focus, .formItem textarea:focus {
+   outline: none;
+   caret-color: var(--text-contrast);
+}
+
+
+.formItem textarea {
+    resize: none;
+}
+
+.formItemWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number {
+    flex: 1;
 }
