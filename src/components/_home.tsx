@@ -7,8 +7,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HelpYou } from './_helpyou';
 import Loader from './Loader';
+import { Projects } from './_projects';
+import Footer from './_footer';
 
-export const Home = () => {
+
+export const Home :React.FC = () => {
+
   const { ref: headerRef, inView: headerInView } = useInView({
     triggerOnce: false,
     threshold: 0.5  // This threshold can be adjusted based on when you want the animation to start
@@ -28,6 +32,12 @@ export const Home = () => {
     triggerOnce: false,
     threshold: 0.5
   });
+
+  const { ref: projectsRef, inView: projectsInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5
+  });
+
   return (
     <AnimatePresence>
       {/* <motion.div className={styles.section}><Loader /></motion.div> */}
@@ -63,11 +73,11 @@ export const Home = () => {
           visible: { opacity: 1, x: 0 }
         }}
         initial="hidden"
-        animate={helpYouInView ? "visible" : "hidden"}
+        animate={myStackInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.2 }}
-        ref={helpYouRef}
+        ref={myStackRef}
         className={styles.section}>
-        <HelpYou />
+        <MyStack />
       </motion.div>
 
       <motion.div
@@ -76,15 +86,29 @@ export const Home = () => {
           visible: { opacity: 1, x: 0 }
         }}
         initial="hidden"
-        animate={myStackInView ? "visible" : "hidden"}
+        animate={projectsInView ? "visible" : "hidden"}
         transition={{ duration: 0.5, delay: 0.2 }}
-        ref={myStackRef}
+        ref={projectsRef}
         className={styles.section}>
-        <MyStack />
+        <Projects />
       </motion.div>
 
+      <motion.div
+        variants={{
+          hidden: { opacity: 1, x: 0 },
+          visible: { opacity: 1, x: 0 }
+        }}
+        initial="hidden"
+        animate={helpYouInView ? "visible" : "hidden"}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        ref={helpYouRef}
+        className={styles.section}>
+        <HelpYou />
+      </motion.div>
 
-      <motion.div className={styles.section}><Contact /></motion.div>
+      <motion.div className={styles.section}>
+        <Contact />
+      </motion.div>
     </AnimatePresence>
   );
 }

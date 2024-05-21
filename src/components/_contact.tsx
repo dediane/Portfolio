@@ -3,6 +3,7 @@ import diane from "/public/assets/diane.jpg";
 import Image from "next/image";
 import styles from "../styles/contact.module.css";
 import { useEffect } from "react";
+import Footer from "./_footer";
 
 export const Contact = () => {
 
@@ -21,6 +22,7 @@ export const Contact = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

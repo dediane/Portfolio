@@ -1,0 +1,80 @@
+.wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 100vh;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    scroll-snap-align: start;
+}
+
+.card {
+    background-color: var(--background-color);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.left, .right {
+    flex: 1;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    border-radius: 10px 10px 0px 0px;
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: var(--color);
+    color: var(--text-contrast);
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+    transform: scale(1);
+}
+
+.cta:hover {
+    transform: scale(1.3);
+}
+
+.ctawrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+}
+

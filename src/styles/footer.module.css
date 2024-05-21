@@ -1,0 +1,34 @@
+.footer {
+    background: var(--text-color);
+    color: var(--text-contrast);
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.head {
+  font-size: 14px;
+  color: var(--text-contrast);
+  opacity: 0.5;
+}
+
+.sub{
+    font-size: 14px;
+    opacity: 0.9;
+
+}
+
+.inline {
+    display: flex;
+    gap: 20px;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "@/styles/helpyou.module.css";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
+import Link from "next/link";
 
 const help = [
     {
@@ -65,11 +66,13 @@ export const HelpYou = () => {
                             />
                         ))}
                     </div>
+                    <Link href="#contact">
                     <div className={styles.ctawrapper}>
                         <div className={styles.cta}>
-                            <a href="#contact">Get in touch</a>
+                            <p>Get in touch</p>
                         </div>
                     </div>
+                    </Link>
                 </div>
             </div>
         </>
