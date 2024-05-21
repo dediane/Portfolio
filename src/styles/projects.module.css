@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start; /* Align items to the start */
-    height: 110vh;
+    height: 100vh;
     background-color: aqua;
     overflow-x: auto; /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory; /* Enable scroll snapping */
