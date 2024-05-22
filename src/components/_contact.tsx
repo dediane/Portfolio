@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../styles/contact.module.css";
 import { useEffect } from "react";
 import Footer from "./_footer";
+import Link from "next/link";
 
 export const Contact = () => {
 
@@ -14,11 +15,11 @@ export const Contact = () => {
                 <div className={styles.contactContainer}>
                     <div className={styles.contactHead}>
                         <Image src={diane} alt="Diane" width={100} height={100} style={{ objectFit: 'cover', borderRadius: 100, marginRight: 30, border: '4px solid var(--background-color' }} />
-                        <h1>Let's work together</h1>
+                        <h1>Let&apos;s work together</h1>
                     </div>
                     <div className={styles.contactBody}>
                         <div className={styles.contactLine}></div>
-                        <div className={styles.contactButton}><a href='/contact'>Get in touch</a></div>
+                        <div className={styles.contactButton}><Link href='/contact'>Get in touch</Link></div>
                     </div>
                 </div>
             </div>

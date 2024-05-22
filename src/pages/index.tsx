@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import Loader from '../components/Loader';
+import Loader from '../components/Loader.js';
 import Homepage from './home';
 import styles from '@/styles/index.module.css';
 

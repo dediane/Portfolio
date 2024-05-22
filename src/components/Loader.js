@@ -8,7 +8,7 @@ const PhysicsWorld = () => {
         // Engine setup
         const engine = Matter.Engine.create();
         const render = Matter.Render.create({
-            element: sceneRef.current,
+            element: sceneRef.current ,
             engine: engine,
             options: {
                 width: window.innerWidth,
@@ -33,7 +33,7 @@ const PhysicsWorld = () => {
             return Math.random() * (window.innerWidth - 100) - (window.innerWidth - 100) / 2;
         };
 
-        const createBody = (texture :string, width :number, height :number, xOffset :any, yOffset :number) => {
+        const createBody = (texture, width, height, xOffset, yOffset ) => {
             return Matter.Bodies.rectangle(centerWidth + xOffset(), yOffset, width, height, {
                 chamfer: Matter.chamferOption,
                 render: {
@@ -77,7 +77,7 @@ const PhysicsWorld = () => {
         });
 
         // Run the engine and renderer
-        Matter.Engine.run(engine);
+        Matter.Runner.run(engine);
         Matter.Render.run(render);
 
         return () => {

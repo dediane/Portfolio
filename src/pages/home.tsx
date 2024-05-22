@@ -1,17 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import React, { useRef } from 'react'
-import { Inter, Mystery_Quest } from 'next/font/google'
-import { Header } from '@/components/_header'
-import { AboutMe } from '@/components/_aboutme'
-import { MyStack } from '@/components/_mystack'
+import React from 'react'
 import styles from '@/styles/index.module.css'
-import MouseTracker from '@/components/_mouseTracker'
-import { Contact } from '@/components/_contact'
 import { Navbar } from '@/components/_navbar'
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
-import { InView, useInView } from 'react-intersection-observer';
-import { Home } from '@/components/_home'
+import { HomeContainer } from '@/components/_homeContainer'
 
 export default function Homepage() {
 
@@ -25,7 +16,7 @@ export default function Homepage() {
       </Head>
       <main className={styles.container}>
         <Navbar />
-        <Home />
+        <HomeContainer />
       </main>
     </>
   );

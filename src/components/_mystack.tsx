@@ -21,7 +21,6 @@ import { InView } from "react-intersection-observer";
 const TechnologyComponent = ({ tech, handleInteraction }: any) => (
     <>
         <Image
-            priority
             src={tech.src}
             alt={tech.alt}
             width={40}
@@ -89,8 +88,19 @@ const TechnologyStack = ({ title, technologies }: any) => {
                         className={styles.logos}
                     >
                         {technologies.map((tech: any) => (
-                            <TechnologyComponent key={tech.name} tech={tech} handleInteraction={handleInteraction} />
-
+                            <div key={tech.name}>
+                                    <Image
+                                    src={tech.src}
+                                    alt={tech.alt}
+                                    width={40}
+                                    height={40}
+                                    onMouseEnter={() => handleInteraction(tech.name, tech.description)}
+                                    onMouseLeave={() => handleInteraction('', '')}
+                                    onTouchStart={() => handleInteraction(tech.name, tech.description)}
+                                    onTouchEnd={() => handleInteraction('', '')}
+                                />
+                            </div>
+                            // <TechnologyComponent key={tech.name} tech={tech} handleInteraction={handleInteraction} />
                         ))}
 
                     </motion.div>

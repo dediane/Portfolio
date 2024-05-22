@@ -8,34 +8,34 @@ export const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             <div className={styles.title}>
-                <Link href='/'>
-                <h4>👋 Hi, it's Diane</h4>
+                <Link href='/#home'>
+                <h4>👋 Hi, it&apos;s Diane</h4>
                 </Link>
             </div>
             <div className={styles.floating}>
                 <ul>
                     <li>
-                        <a href="#about">About</a>
+                        <Link href="/#about">About</Link>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <Link href="#projects">Projects</Link>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
             </div>
             <div className={styles.logos}>
                 <ul>
                     <li>
-                        <a href="https://www.linkedin.com/in/diane-decourt" target="_blank">
+                        <Link href="https://www.linkedin.com/in/diane-decourt" target="_blank">
                         <FaLinkedinIn />
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="https://www.github.com/dediane" target="_blank">
+                        <Link href="https://www.github.com/dediane" target="_blank">
                         <FaGithub />
-                        </a>
+                        </Link>
                             
                     </li>
                     </ul>

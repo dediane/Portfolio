@@ -10,9 +10,9 @@ const Card = ({ title, technologies, description, img, url, height, width }: { t
         <>
             <div className={styles.card}>
                 <div className={styles.left}>
-                    <div className={styles.computer}>
-                        <Image src={'/assets/sites/mbp.png'} alt={title} width={603} height={310} style={{ objectFit: 'fill', zIndex: 10 }} />
-                    </div>
+                    {/* <div className={styles.computer}>
+                        <Image src={'/assets/sites/mbp.png'} alt={title} width={422} height={217} style={{ objectFit: 'fill', zIndex: 10 }} />
+                    </div> */}
                     <div className={styles.image}>
                         <Image src={img} alt={title} width={width} height={height} style={{ objectFit: 'fill' }} />
                     </div>
@@ -24,7 +24,7 @@ const Card = ({ title, technologies, description, img, url, height, width }: { t
                         </div>
                         <div className={styles.div2}>
                             <p>{description}</p>
-                            <Link href={url}>
+                            <Link href={url} target="_blank" >
                                 <div className={styles.ctawrapper}>
                                     <div className={styles.cta}>
                                         <p>View website</p>
@@ -40,52 +40,44 @@ const Card = ({ title, technologies, description, img, url, height, width }: { t
 }
 
 export const Projects = () => {
-    const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-    const cardRefs = useRef<Array<HTMLDivElement | null>>([null, null, null]);
 
     return (
-        <>
-            <div className={styles.wrapper} ref={scrollContainerRef}>
-                <div className={styles.dot}></div>
-                <div className={styles.dot}></div>
-                <div className={styles.dot}></div>
-            </div>
-        </>
+        // <div className={styles.container} id="projects">
+        <div className={styles.cards} id="projects"> 
+            <Card
+                title='Evenly APP'
+                technologies="NextJS React CSS SCSS Nodemailer NodeJS Express Postgresql Prisma Git Github"
+                description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
+                img='/assets/sites/evenly.png'
+                url='https://evenly-app.com/'
+                width={311}
+                height={434}
+                /> 
+            <Card
+                title='Agency demo app'
+                technologies="NextJS React CSS SCSS Git Github"
+                description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
+                img='/assets/sites/agency.png'
+                url='https://agency.creativefullstack.com/'
+                width={311}
+                height={574}
+                />
+            <Card
+                title='Marketing demo app'
+                technologies="NextJS React CSS SCSS Framer-motion Git Github Nginx"
+                description='Hootsuite clone, social media marketing tools demo app. Frontend project in NextJS, React, CSS, SCSS & Framer Motion'
+                img='/assets/sites/marketing.png'
+                url='https://marketing.creativefullstack.com/'
+                width={311}
+                height={875}
+                /> 
+            {/* <Card
+                title='Dashboard crypto'
+                technologies="NextJS React CSS SCSS Nodemailer NodeJS Express Postgresql Prisma Git Github"
+                description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
+                img='/assets/diane.png'
+            />   */}
+        </div> 
+        // </div>
     )
 }
-
-{/* <div className={styles.cards}> */}
-    {/* <Card
-        title='Evenly APP'
-        technologies="NextJS React CSS SCSS Nodemailer NodeJS Express Postgresql Prisma Git Github"
-        description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
-        img='/assets/sites/evenly.png'
-        url='https://evenly-app.com/'
-        width={445}
-        height={620}
-    /> */}
-    {/* <Card
-        title='Web agency'
-        technologies="NextJS React CSS SCSS Git Github"
-        description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
-        img='/assets/sites/agency.png'
-        url='https://agency.creativefullstack.com/'
-        width={445}
-        height={820}
-    />
-    <Card
-        title='Marketing tools demo app'
-        technologies="NextJS React CSS SCSS Framer-motion Git Github Nginx"
-        description='Hootsuite clone, social media marketing tools demo app. Frontend project in NextJS, React, CSS, SCSS & Framer Motion'
-        img='/assets/sites/marketing.png'
-        url='https://marketing.creativefullstack.com/'
-        width={445}
-        height={1250}
-    /> */}
-    {/* <Card
-        title='Dashboard crypto'
-        technologies="NextJS React CSS SCSS Nodemailer NodeJS Express Postgresql Prisma Git Github"
-        description='Web application, event organization & ticketing platform. Full stack project in NextJS, NodeJS, Postgres & Prisma'
-        img='/assets/diane.png'
-    />  */}
-{/* </div> */}

@@ -8,7 +8,7 @@ import { InView } from "react-intersection-observer";
 
 export const Header = () => {
     return (
-        <div className={styles.header}>
+        <div className={styles.header} id="home">
             <div className={styles.leftsection}>
                     {/* <FaArrowDown className={styles.arrow}/> */}
                 <InView triggerOnce={false} threshold={0.5}>

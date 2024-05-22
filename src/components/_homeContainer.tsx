@@ -12,10 +12,10 @@ import Footer from './_footer';
 import { useEffect, useRef, useState } from 'react';
 
 
-export const Home :React.FC = () => {
+export const HomeContainer :React.FC = () => {
   const containerRef = useRef(null);
   const projectsRef = useRef(null);
-  const [isHorizontalScroll, setIsHorizontalScroll] = useState(true);
+  const [isHorizontalScroll, setIsHorizontalScroll] = useState(false);
 
   const { ref: headerRef, inView: headerInView } = useInView({
     triggerOnce: false,
@@ -46,6 +46,7 @@ export const Home :React.FC = () => {
     <AnimatePresence>
       {/* <motion.div className={styles.section}><Loader /></motion.div> */}
       <motion.div
+        key={0}
         variants={{
           hidden: { opacity: 1, y: -75 },
           visible: { opacity: 1, y: 0 }
@@ -59,6 +60,7 @@ export const Home :React.FC = () => {
       </motion.div>
 
       <motion.div
+        key={1}
         variants={{
           hidden: { opacity: 1, x: -75 },
           visible: { opacity: 1, x: 0 }
@@ -72,6 +74,7 @@ export const Home :React.FC = () => {
       </motion.div>
 
       <motion.div
+        key={2}
         variants={{
           hidden: { opacity: 1, x: 0 },
           visible: { opacity: 1, x: 0 }
@@ -85,6 +88,7 @@ export const Home :React.FC = () => {
       </motion.div>
 
       <motion.div
+        key={3}
         variants={{
           hidden: { opacity: 1, x: 0 },
           visible: { opacity: 1, x: 0 }
@@ -94,12 +98,11 @@ export const Home :React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         ref={projectsInViewRef}
         className={styles.section}>
-          <div ref={projectsRef}>
-            <Projects />
-          </div>
+          <Projects />
       </motion.div>
 
       <motion.div
+      key={4}
         variants={{
           hidden: { opacity: 1, x: 0 },
           visible: { opacity: 1, x: 0 }
@@ -112,7 +115,7 @@ export const Home :React.FC = () => {
         <HelpYou />
       </motion.div>
 
-      <motion.div className={styles.section}>
+      <motion.div className={styles.section} key={5}>
         <Contact />
       </motion.div>
     </AnimatePresence>
