@@ -6,39 +6,39 @@ import Footer from "@/components/_footer";
 const SeparatorComponent = () => {
     return (
         <>
-        <div className={styles.custom}>
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{fill: '#0C26C9'}}></path>
-            </svg>
-        </div>
-        <div className={styles.separator}>
-            <div className={styles.line}></div>
-            <div className={styles.circle}></div>
-            <div className={styles.line}></div>
-        </div>
+            <div className={styles.custom}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{ fill: '#0C26C9' }}></path>
+                </svg>
+            </div>
+            <div className={styles.separator}>
+                <div className={styles.line}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.line}></div>
+            </div>
         </>
     );
-  };
+};
 
 const SeparatorComponent2 = () => {
     return (
         <>
-        <div className={styles.custom2}>
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{fill: '#0C26C9'}}></path>
-            </svg>
-        </div>
-        <div className={styles.separator}>
-            <div className={styles.line}></div>
-            <div className={styles.circle}></div>
-            <div className={styles.line}></div>
-        </div>
+            <div className={styles.custom2}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style={{ fill: '#0C26C9' }}></path>
+                </svg>
+            </div>
+            <div className={styles.separator}>
+                <div className={styles.line}></div>
+                <div className={styles.circle}></div>
+                <div className={styles.line}></div>
+            </div>
         </>
     );
-  };
-  
+};
 
-const ContactSection = ({formData, setFormData }: { formData: any, setFormData: any }) :any  => {
+
+const ContactSection = ({ formData, setFormData }: { formData: any, setFormData: any }): any => {
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -144,24 +144,49 @@ const ContactSection = ({formData, setFormData }: { formData: any, setFormData: 
     )
 }
 
-const Submit = ({formData, setFormData }: { formData: any, setFormData: any }) :any  => {
-    const handleSubmit = (e: any) => {
+const Submit = ({ formData, setFormData }: { formData: any, setFormData: any }): any => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-        // Process form data here
         console.log('Form data submitted:', formData);
-        // Clear form
-        setFormData({
-            name: '',
-            email: '',
-            company: '',
-            service: '',
-            message: '',
-        });
+    
+        try {
+            const response = await fetch('/api/sendmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const result = await response.json();
+    
+            if (result.success) {
+                console.log('Message sent successfully');
+                alert('Message sent successfully');
+    
+                // Clear form
+                setFormData({
+                    name: '',
+                    email: '',
+                    company: '',
+                    service: '',
+                    message: '',
+                });
+            } else {
+                console.error('Failed to send message');
+                alert('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending the message');
+        }
     };
 
     return (
-        <div className={styles.submit}>
-            <button onClick={handleSubmit} type="submit">Send</button>
+        <div className={styles.buttonwrapper}>
+            <div className={styles.submit}>
+                <button onClick={handleSubmit} type="submit">Send</button>
+            </div>
         </div>
     )
 }
@@ -177,14 +202,14 @@ export default function Contact() {
 
     return (
         <>
-        <Navbar />
-        <SeparatorComponent />
-        <div className={styles.body}>
-            <ContactSection formData={formData} setFormData={setFormData}/>
-        </div>
-        <SeparatorComponent2 />
-        <Submit formData={formData} setFormData={setFormData}/>
-        <Footer />
+            <Navbar />
+            <SeparatorComponent />
+            <div className={styles.body}>
+                <ContactSection formData={formData} setFormData={setFormData} />
+            </div>
+            <SeparatorComponent2 />
+            <Submit formData={formData} setFormData={setFormData} />
+            <Footer />
         </>
     )
 }

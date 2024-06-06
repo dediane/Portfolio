@@ -147,6 +147,23 @@
 
 }
 
-.submit {
-    
+.buttonwrapper {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100vw;
+    height: 100px;
+    margin-top: -40px;
+}
+
+.submit button {
+    background-color: var(--color);
+    color: var(--text-contrast);
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: 300;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
