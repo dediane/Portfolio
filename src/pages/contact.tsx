@@ -51,7 +51,7 @@ const ContactSection = ({ formData, setFormData }: { formData: any, setFormData:
         <>
             <div className={styles.container}>
                 <div className={styles.card}>
-                    <h1>⁕ Let's start a project together</h1>
+                    <h1>⁕ Let&apos;s start a project together</h1>
                     <div className={styles.formWrapper}>
                         <form>
                             <div className={styles.formItemWrapper}>
